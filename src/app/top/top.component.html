@@ -1,0 +1,40 @@
+<div class="nav-top fixed-top " >
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-5">
+          <owl-carousel-o *ngIf="dataTipoCambio" [options]="carouselOptionsTipoCambio" Class="owl-carousel owl-top row sliding">
+              <ng-template carouselSlide class="owl-top" *ngFor="let tc of dataTipoCambio.data">         
+                  {{tc.moneda}} : Bs. {{tc.tipo_cambio}}
+              </ng-template>
+          </owl-carousel-o>
+      </div>
+      <div class="col-lg-8 col-md-6 col-sm-7">
+          <ul class=" list-inline float-right nav-top-list d-none d-sm-block">
+              <li class="list-inline-item">
+                <a class="nav-linktop  d-none d-sm-block" routerLink='/canales/oficinas-sucursales'>Sucursales <i class="fa fa-map-marker"></i></a>
+              </li>
+              <li class="list-inline-item "><i class="d-none d-sm-block">|</i></li>
+              <li class="list-inline-item ">
+                <a class="nav-linktop d-none d-sm-block" routerLink="/puntoReclamo">Punto de Reclamo<i class="fa fa-info-circle"></i></a>
+              </li>
+              <li class="list-inline-item"><i class="d-none d-md-block">|</i></li>
+              <li class="list-inline-item">
+                  <a class="nav-linktop  d-none d-md-block" routerLink='/canales/contacto'>Contáctenos <i class="fa fa-id-card"></i></a>
+                </li>
+              <li class="list-inline-item"><i class="d-none d-lg-block">|</i></li>
+              <li class="list-inline-item">
+
+                  <div class="dropdown show d-none d-lg-block">
+                      <a class="nav-linktop dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Simulador Financiero<i class="fa fa-calculator"></i>
+                      </a>
+                    
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="nav-linktop dropdown-item" routerLink="/calculadora/ahorro">Ahorro</a>
+                        <a class="nav-linktop dropdown-item" routerLink="/calculadora/credito">Crédito</a>
+                      </div>
+                    </div>
+              </li>    
+          </ul>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+
+<app-navbar></app-navbar>
+  <!-- Hero Bell Template -->
+  <section class="hero">
+    <div class="container text-center">
+
+      <div class="col-md-12">
+        <h1 class="rse-titulo">
+            Memorias
+        </h1>
+        <p class="tagline">
+          Responsabilidad Social Empresarial
+        </p>
+        <a class="btn-rse btn-full" (click)="scroll(rse)" >Ver Memorias</a>
+      </div>
+    </div>
+
+  </section>
+  
+  <section #rse id="rse" class="rse-contenido">
+      <br> <br><br><br><br><br>
+    <div *ngIf="dataMemorias" class="features-row section-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow fadeInLeft">
+                <h2>Descripción</h2>
+                <h3>Una Memoria de Responsabilidad Social es un documento que expone información acerca del desempeño económico, ambiental, social y de gobierno de una organización. Es decir, sobre los pilares que constituyen su responsabilidad social.</h3>
+                <p>
+                    La elaboración de una memoria de responsabilidad social o memoria de sostenibilidad comprende la medición, divulgación y rendición de cuentas frente a grupos de interés internos y externos en relación con el desempeño de la organización con respecto al objetivo del desarrollo sostenible. “La elaboración de memorias de sostenibilidad” es un término muy amplio que se considera sinónimo de otros términos también utilizados para describir la información relativa al impacto económico, ambiental y social (por ejemplo, triple cuenta de resultados, informes de responsabilidad corporativa, etc.). 
+                </p>
+                <div class="wow fadeInRight">
+                  
+                  <p class="wow fadeInRight" data-wow-duration="0.5s" *ngFor="let memoria of dataMemorias.data">
+                    <a href="{{memoria.archivo}}" target="_blank">
+                      <i class="fa fa-cloud-download wow fadeInRight" data-wow-duration="0.5s"></i>
+                      {{memoria.titulo}}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </section>

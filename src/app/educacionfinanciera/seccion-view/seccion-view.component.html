@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+<br><br><br><br>
+<div class="row">
+  <h2>Planes de Educación Financiera</h2>
+</div>
+<div class="row" *ngIf="dataEntradas">
+    <div class="col-12 col-md-6 example-1 card" *ngFor="let entrada of dataEntradas; let i = index">
+      <div class="wrapper" [ngStyle]="{'background':'url('+entrada.imagen+') 20% 1% / cover no-repeat'}">
+
+        <div class="date">
+          <span class="day">{{i+1}}</span>
+        </div>
+        <div class="data">
+          <div class="content">
+            <span class="author">Recursos</span>
+            <h1 class="title"><label for="show-menu{{i}}" class="button-show">{{entrada.titulo}}</label></h1>
+            <p class="text" [innerHTML]="entrada.descripcion | safeHtml"></p>
+            <label for="show-menu{{i}}" class="menu-button"><span></span></label>
+          </div>
+          <input type="checkbox" id="show-menu{{i}}" />
+          <ul class="menu-content">
+            <li>
+              <a *ngIf="entrada.imagen" (click)="abrirImagen(entrada.imagen)" class="fa  fa-search-plus button-view"> <span>Zoom</span></a>
+            </li>
+            <li><a *ngIf="entrada.video" (click)="abrirVideo(entrada.titulo,entrada.video)" class="fa fa-play-circle button-view"><span>Video</span></a></li>
+            <li><a *ngIf="entrada.archivo" (click)="abrirDescarga(entrada.titulo,entrada.archivo)" class="fa fa-arrow-circle-down button-view"><span>Descarga</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ngx-smart-modal #imagenModal identifier="imagenModal"
+  customClass="nsm-dialog-animation-ttb nsm-centered">
+      
+      <img class="modal-image"
+           src="{{imagenActivo}}"
+           alt="Lorem picsum">
+  </ngx-smart-modal>
+
+  <ngx-smart-modal #videoModal
+                 identifier="videoModal"
+                 customClass="nsm-dialog-animation-btt medium-modal">
+    <h1>{{tituloActivo}}</h1>
+    <iframe *ngIf="videoModal.isVisible()"
+            #rickroll
+            width="1280"
+            height="450"
+            style="max-width: 100%;"
+            [src]="videoActivo"
+            frameborder="0"
+            allowfullscreen></iframe>
+</ngx-smart-modal>
+<ngx-smart-modal #descargaModal identifier="descargaModal"
+  customClass="nsm-dialog-animation-ttb nsm-centered">
+  <h2>{{tituloActivo}}</h2>
+  <a href="{{archivoActivo}}" target="_blank">
+      <i class="fa fa-cloud-download wow fadeInRight" data-wow-duration="0.5s"></i>
+      Archivo {{tituloActivo}}
+    </a>
+  </ngx-smart-modal>

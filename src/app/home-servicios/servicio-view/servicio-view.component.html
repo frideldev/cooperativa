@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+<div *ngIf="servicio">
+    <div  *ngIf="servicio.galeria.length"  class="intro intro-carousel" >
+        <owl-carousel-o  [options]="carouselOptions" >
+            <ng-container class="item" *ngFor="let image of servicio.galeria">
+              <ng-template carouselSlide>
+              <div class="carousel-item-a intro-item bg-image" [ngStyle]="{'background-image':'url('+image.imagen+')'}">
+              <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                  <div class="table-cell">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-8">
+                          <div class="intro-body">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+    <div *ngIf="!servicio.galeria.length">
+      <br><br><br>
+    </div>
+</div>
+<div class="contenido">
+
+    <strong *ngIf="servicio" class="typed-element">{{servicio.nombre}}</strong>
+    <div *ngIf="servicio" class="features-row section-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow fadeInLeft">
+                <h2>Descripción</h2>
+                <p >{{servicio.descripcion}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div *ngIf="servicio" class="features-row">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow fadeInLeft">
+                <h2>Beneficios</h2>
+                <p [innerHTML]="servicio.beneficios | safeHtml"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div *ngIf="servicio" class="features-row section-bg">
+        <div *ngIf="servicio.requisitos" class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow fadeInLeft">
+                <h2>Requisitos</h2>
+                <p [innerHTML]="servicio.requisitos | safeHtml"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

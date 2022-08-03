@@ -1,0 +1,51 @@
+<app-menu></app-menu>
+<br><br><br><br><br><br><br>
+<!--==========================
+      About Us Section
+    ============================-->
+    <section id="noticias">
+      <div class="container">
+
+        <header class="section-header">
+          <h2>Noticias</h2>
+        </header>
+        <div  *ngFor="let noticia of dataNoticias; let i = index">
+        <div *ngIf="i%2==0; else impar" class="row about-container">
+
+            <div class="col-md-3 content order-md-1 order-1">
+                <div class="icon-box wow fadeInUp">
+                  <img src="{{noticia.imagen}}" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="col-md-9 background order-md-2 order-2 wow fadeInUp">
+              <div class="icon-box wow fadeInUp">
+                <h4 class="title">{{noticia.nombre}}</h4>
+                <i class="fa fa-calendar-o"></i><h3>Publicado el {{noticia.fecha}}</h3>
+                <p class="description">{{noticia.descripcion_corta}} <a [routerLink]="['/noticia', noticia.id]">Leer más.</a></p>
+              </div>
+            </div>
+        </div>
+        <br><br>
+        <ng-template #impar>
+            <div class="row about-container">
+
+                <div class="col-md-3 content order-md-2 order-1" >
+                    <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
+                      <img src="{{noticia.imagen}}" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-md-9 background order-md-1 order-2 wow fadeInUp" data-wow-delay="0.4s">
+                  <div class="icon-box wow fadeInUp">
+                    <h4 class="title">{{noticia.nombre}}</h4>
+                    <i class="fa fa-calendar-o"></i><h3>Publicado el {{noticia.fecha}}</h3>
+                    <p class="description">{{noticia.descripcion_corta}} <a [routerLink]="['/noticia', noticia.id]" >Leer más.</a></p>
+                  </div>
+                </div>
+            </div>
+
+        </ng-template>
+        
+      </div> <!-- #end ngFor -->
+
+      </div>
+    </section><!-- #about -->

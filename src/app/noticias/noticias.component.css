@@ -1,0 +1,39 @@
+/* Agregado desde Organizacion*/
+#noticias p {
+    line-height: 24px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+#noticias i {
+    color: #666666;
+    font-size: 20px;
+    transition: 0.5s;
+    float: left;
+    padding: 0 15px 0px 0;
+    line-height: 1;
+  }
+  
+#noticias i:before {
+    background: #26b460;
+    background: linear-gradient(45deg, #26b460 0%, #38c172 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+#noticias h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #26b460;
+  }
+  
+#noticias h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-style: italic;
+    color: #999;
+  }
+#noticias .container{
+    width: 80%
+}

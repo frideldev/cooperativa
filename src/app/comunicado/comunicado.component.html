@@ -1,0 +1,33 @@
+<div *ngIf="dataComunicado" class="container">
+  <ngx-smart-modal #comunicadoModal identifier="comunicadoModal"
+    customClass="nsm-dialog-animation-ttb nsm-comunicado"
+    [closable]="false" [dismissable]="false" [escapable]="false">
+  <!-- Modal -->
+  <div  class="medium-modal">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="title-modal"> Comunicado </h4>
+          <button type="button" class="close" (click)="ngxSmartModalService.getModal('comunicadoModal').close()"><i class="fa fa-times"></i></button>
+        </div>
+        <div class="modal-body" >
+          <p>
+            {{dataComunicado.nombre}}
+          </p>
+          <div [innerHTML]="dataComunicado.descripcion_corta | safeHtml" class="comunicado-descripcion"></div>            
+          <a *ngIf="dataComunicado.ira"  href="{{dataComunicado.ira}}">
+            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Mas información</button>
+          </a> 
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-cmm" (click)="ngxSmartModalService.getModal('comunicadoModal').close()">Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</ngx-smart-modal>
+</div>

@@ -1,0 +1,76 @@
+.card {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  /*transform-style: preserve-3d;*/
+  perspective: 600px;
+  transition: 0.5s;
+}
+.card:hover .card-front {
+  transform: rotateX(-180deg);
+}
+.card:hover .card-back {
+  transform: rotateX(0deg);
+}
+
+.card-front {
+  height: 100%;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #26B460;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.card-front img{
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 100%;
+  /*width: 100%;*/
+}
+
+.card-back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #26B460;
+  backface-visibility: hidden;
+  transform: rotateX(180deg);
+  transition: 0.5s;
+  color: #ffffff;
+  text-align: center;
+}
+.card-back h2 {
+  margin: 30% auto 35% auto;
+  font-size: 26px;
+  color: #fff;
+}
+.card-back h2 span {
+  font-size: 12px;
+}
+.card-back a {
+  color: #ffffff;
+  text-decoration: none;
+  height: 30px;
+  width: 30px;
+  padding: 5px 5px;
+  border-radius: 4px;
+  line-height: 20px;
+}
+.card-back a:hover {
+  color: #26B460;
+  background-color: #fff;
+}
+.modal-image{
+  max-width: 100% !important;
+}

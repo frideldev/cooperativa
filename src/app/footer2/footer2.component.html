@@ -1,0 +1,102 @@
+
+  <section class="nb-footer" id="footer">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-3 col-sm-6">
+    <div class="footer-single">
+    <!-- 	<img src="images/logo.png" class="img-responsive" alt="Logo"> -->
+    
+    <!-- DigiCert Seal HTML -->
+    <!-- Place HTML on your site where the seal should appear -->
+    <div id="DigiCertClickID_qGO1pkDx" lang="es"></div>
+
+
+      <!-- This is only for better view of theme if you want your image logo remove div dummy-logo bellow and replace your logo in logo.png and uncomment logo tag above-->
+    <div class="dummy-logo">
+      <h2>Cotizaciones</h2>
+    </div>
+      <p>Cotizaciones al {{fechaLiteral}}:<br>
+        Tipo de Cambio por Dólar: <br>
+        <span *ngFor="let tc of dataTipoCambio">
+          {{tc.moneda}} : Bs. {{tc.tipo_cambio}} <br>
+        </span><br>
+        Tasa de Referencia (TRe): <br>
+        <span *ngFor="let ti of dataTasaInteres">
+          TRe {{ti.moneda}} : {{ti.valor_tre}}%,
+        </span><br></p>
+    </div>
+    <!-- Agente Solicitud de Credito
+    <a routerLink='/puntoReclamo' id="floater" tooltip="<b class='text-success'>Realiza tu reclamo en línea haciendo clic aqui</b>" [options]="myOptions" >
+      <img src="./photos/1/generales/puntoreclamo/punto.png" style="margin-top: -30px; width: 100px; height: 100px;">
+    </a>
+    / Nav Star /-->
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="footer-single useful-links">
+     <div class="footer-title"><h2>Cooperativa Madre y Maestra</h2></div>
+     <ul class="list-unstyled">
+              <li><a routerLink='/cooperativa'>Nuestra Cooperativa <i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink='/organizacion'>Organización <i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink='/canales/oficinas-sucursales'>Agencias y Sucursales <i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/educacion" target="_blank">Educación Financiera<i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/trabajanosotros">Trabaja con Nosotros <i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/licitaciones">Licitaciones<i class="fa fa-angle-right pull-right"></i></a></li>
+      </ul>
+      </div>
+  </div>
+  <div class="clearfix visible-sm"></div>
+  <div class="col-md-3 col-sm-6">
+    <div class="footer-single useful-links">
+     <div class="footer-title"><h2>Información Institucional</h2></div>
+     <ul class="list-unstyled">
+              <li><a routerLink="/institucional">Información Financiera<i class="fa fa-angle-right pull-right"></i></a></li>
+
+              <li><a routerLink="/rse">Responsabilidad Social Empresarial<i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/uif">U. I. F.<i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a href="/assets/files/tarifario/tarifario.pdf" target="_blank">Tarifario <i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/politica-privacidad">Política de privacidad <i class="fa fa-angle-right pull-right"></i></a></li>
+
+      </ul>
+      </div>
+  </div>
+  <div class="col-md-3 col-sm-6">
+    <div class="footer-single useful-links">
+     <div class="footer-title"><h2>Para nuestros Clientes</h2></div>
+     <ul class="list-unstyled">
+              <li><a routerLink='/canales/contacto'>Atencion al Cliente <i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/preguntasFrecuentes">Preguntas Frecuentes<i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/calculadora/ahorro">Simulador de Ahorro<i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/calculadora/credito">Simulador de Crédito<i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/puntoReclamo">Punto de Reclamo <i class="fa fa-angle-right pull-right"></i></a></li>
+              <li><a routerLink="/noticias">Noticias <i class="fa fa-angle-right pull-right"></i></a></li>
+
+      </ul>
+      </div>
+  </div>
+
+  </div>
+  </div>
+  </section>
+
+  <section class="nb-copyright">
+  <div class="container">
+  <div class="row">
+  <div class="col-sm-8 copyrt xs-center">
+      <p class="copyright color-text-a">
+          &copy; Todos los derechos reservados 2019 - Cooperativa de Ahorro y Crédito Abierta Madre y Maestra R.L.      Teléfono: +591 4 6643316<br>
+          Entidad supervisada por ASFI.
+        </p>
+  </div>
+  <div class="col-sm-4 text-right xs-center">
+    <ul class="list-inline footer-social">
+        <li class="list-inline-item"><a class="socials-foot-a" href="tel:+59161874235" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+      <li class="list-inline-item"><a class="socials-foot-a" rel="noopener" href="https://m.me/coopmadreymaestra?fbclid=IwAR1zML_5CVPeo627LdXhzHEy8KeW1fgT9t3hZlKCYJ-iwzDLQ0_Luo4_qmE" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li class="list-inline-item"><a class="socials-foot-a" rel="noopener" href="https://wa.me/59161874235" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+      <li class="list-inline-item"><a class="socials-foot-a" rel="noopener" href="https://www.youtube.com/channel/UCv8kwFRAQdRsLcaRGbIlqig" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+
+    </ul>
+  </div>
+  </div>
+  </div>
+  </section>

@@ -1,0 +1,43 @@
+.modal-header,.title-modal,  .close {
+    background-color: #26b460;
+    color:white !important;
+    text-align: center;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    /*padding-top: 10px;*/
+    padding-bottom: 15px;
+  }
+
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
+  .modal-dialog{
+    max-width: 700px;
+  }
+
+  .nsm-comunicado {
+    background-color: transparent ;
+    box-shadow: none;
+  }
+  .btn-cmm:hover{
+    color: #fff;
+    background-color: #28a745;
+    border-color: #26b460;
+  }
+  .btn-cmm{
+    color: #fff;
+    background-color: #027733;
+    border-color: #26b460;
+  }
+  .comunicado-descripcion{
+   text-align: justify;
+  }
+  .modal-body{
+    padding:40px 40px;
+  }
+  @media (max-width: 768px) {
+    .modal-body{
+      padding:20px 20px;
+    }
+  }

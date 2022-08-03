@@ -1,0 +1,93 @@
+<app-menu></app-menu>
+<div class="intro intro-carousel" >
+  
+    <owl-carousel-o [options]="carouselOptions">
+        <ng-template carouselSlide class="item" >
+          <div class="carousel-item-a intro-item bg-image" [ngStyle]="{'background-image':'url(/photos/1/generales/informacionfinanciera/inf-slide01.jpg)'}">
+          <div class="overlay-slide overlay-a"></div>
+            <div class="intro-content display-table">
+              <div class="table-cell">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <div class="intro-body">
+                        <p class="tagline">
+                              Información Financiera
+                        </p>
+                        <a class="btn-rse btn-full" (click)="scroll(rse)" >Ver Información</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item" >
+            <div class="carousel-item-a intro-item bg-image" [ngStyle]="{'background-image':'url(/photos/1/generales/informacionfinanciera/inf-slide02.jpg)'}">
+            <div class="overlay-slide overlay-a"></div>
+              <div class="intro-content display-table">
+                <div class="table-cell">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <div class="intro-body">
+                          <p class="tagline">
+                                Información Financiera
+                          </p>
+                          <a class="btn-rse btn-full" (click)="scroll(rse)" >Ver Información</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+          </ng-template>
+          <ng-template carouselSlide class="item" >
+            <div class="carousel-item-a intro-item bg-image" [ngStyle]="{'background-image':'url(/photos/1/generales/informacionfinanciera/inf-slide03.jpg)'}">
+            <div class="overlay-slide overlay-a"></div>
+              <div class="intro-content display-table">
+                <div class="table-cell">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <div class="intro-body">
+                          <p class="tagline">
+                                Información Financiera
+                          </p>
+                          <a class="btn-rse btn-full" (click)="scroll(rse)" >Ver Información</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+          </ng-template>
+      </owl-carousel-o>
+</div>
+<section #rse></section>
+<br><br><br><br><br>
+<div class="container" >
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 col-12" *ngFor="let info of dataInfo">
+        <div class="skill-card">
+          <a [routerLink]="['/institucional/seccion', info.id]">
+            <header class="skill-card__header"><img class="skill-card__icon" src="./{{info.imagen}}" alt="HTML5 Logo"/></header>
+            <section class="skill-card__body">
+              <h2 class="skill-card__title">{{info.secccion}}</h2><span class="skill-card__duration">{{info.descripcion}}</span>
+              <!--<ul class="skill-card__knowledge">
+                <li>HTML5</li>
+                <li>Sémantique</li>
+                <li>SVG</li>
+                <li>Canvas</li>
+              </ul> -->
+            </section>
+          </a>
+        </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+    <!--==========================
+      Clients Section
+    ============================-->
+    
+    <section id="testimonials" class="section-servicios">
+        
+      <div class="container">
+
+        <header class="section-header">
+          <h2>Servicios</h2>
+        </header>
+    
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <owl-carousel-o [options]="customOptions">
+                  <ng-container *ngFor="let servicio of dataServicios">
+                    <ng-container *ngFor="let subtipo of servicio.subtipos">      
+                      <ng-template carouselSlide class="testimonial-item" *ngFor="let servicio of subtipo.productosservicios">
+                          <div class="testimonial-item">
+                              <img src="{{servicio.imagen}}" class="testimonial-img" alt="">
+                                    <h3>{{servicio.nombre}}</h3>
+                                    <h4>{{servicio.beneficio}}</h4>
+                                    <p [innerHTML]="servicio.descripcion | safeHtml"></p>
+                                    <ul id="ver-mas">
+                                      <li class="" (click)="viewServicioProducto(servicio)" >Ver más.</li>
+                                    </ul>
+                            </div>
+                      </ng-template>  
+                    </ng-container>
+                  </ng-container>
+                </owl-carousel-o>
+
+          </div>
+        </div>
+
+
+      </div>
+    </section><!-- #testimonials -->

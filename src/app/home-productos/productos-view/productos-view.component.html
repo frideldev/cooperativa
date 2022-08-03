@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+<div *ngIf="producto">
+    <div  *ngIf="producto"  class="intro intro-carousel" >
+        <owl-carousel-o  *ngIf="producto" [options]="carouselOptions" >
+            <ng-container class="item" *ngFor="let image of producto.galeria">
+              <ng-template carouselSlide>
+                <div class="carousel-item-a intro-item bg-image" [ngStyle]="{'background-image':'url('+image.imagen+')'}">
+                <div class="overlay overlay-a"></div>
+                  <div class="intro-content display-table">
+                    <div class="table-cell">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="intro-body">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+              </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+    <div *ngIf="!producto.galeria.length">
+      <br><br><br><br>
+    </div>
+</div>
+<br>
+<div class="contenido">
+
+    <strong *ngIf="producto" class="typed-element">   {{producto.nombre}}</strong>
+    <div *ngIf="producto" class="features-row section-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow bounceInLeft">
+                <h2>Descripción</h2>
+                <p >{{producto.descripcion}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div *ngIf="producto" class="features-row">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow fadeInLeft">
+                <h2>Beneficios</h2>
+                <p [innerHTML]="producto.beneficios | safeHtml"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div *ngIf="producto" class="features-row section-bg">
+        <div *ngIf="producto.requisitos" class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow fadeInLeft">
+                <h2>Requisitos</h2>
+                <p [innerHTML]="producto.requisitos | safeHtml"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

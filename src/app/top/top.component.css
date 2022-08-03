@@ -1,0 +1,24 @@
+.nav-top {
+    z-index: 1033;
+    height: 20px;
+    color:#086c38;
+    font-family: 'Open Sans',Arial,sans-serif;
+    font-size:14px;
+    background-color: #ffda2e;
+    text-decoration: none;
+    ;
+}
+.dropdown-menu{
+    background: #ffda2e;
+    
+}
+.nav-top-list{
+    margin-right: 20px;
+}
+.nav-linktop{
+    color: #086c38;
+    text-decoration: none;
+}
+.owl-top{
+    margin-left: 20px;
+}

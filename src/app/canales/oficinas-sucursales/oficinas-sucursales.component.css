@@ -1,0 +1,55 @@
+/* Agente Solicitud Credito*/
+#floater{
+  position: absolute;
+    bottom: 5px;
+    right: 150px;
+    width: 60px;
+    height: 100px;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    z-index: 1001;
+    border-radius: 3px 0 0 3px;
+    padding: 1px;
+    text-align: center;
+    box-sizing: border-box;
+    display: inline-block;
+}
+agm-map {
+    height: 450px;
+  
+  }
+
+ .oficina{
+  font-size: 25px !important;
+  font-family: CalibriBold-1 !important;
+  line-height: normal !important;
+  color: #26B460;
+ } 
+
+ .oficina-info{
+  font-size: 15px !important;
+  font-family: CalibriBold-1 !important;
+  line-height: normal !important;
+  text-align: right;
+ }
+ 
+ .oficina-data{
+  text-align: left;
+  font-size: 15px !important;
+  font-family: CalibriBold-1 !important;
+}
+
+/*--- Jullerosoft Ini----*/
+.acordion-title{
+  background: #26B460;
+  color: #ffffff;
+}
+.acordion-title .btn{
+  background: #26B460;
+  color: #ffffff;
+}
+.list-group .btn{
+  color: #26B460;
+}
+
+/*--- Jullerosoft Fin ---*/

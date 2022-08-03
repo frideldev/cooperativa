@@ -1,0 +1,55 @@
+/*======================================
+//--//-->   FOOTER
+======================================*/
+
+.section-footer {
+    padding-top: 60px;
+    margin-top: 60px;
+    background: #DCF8C6;
+  }
+  
+  .section-footer ul {
+    line-height: 2;
+  }
+  
+  .section-footer .item-list-a i {
+    font-size: 14px;
+    padding-right: 4px;
+    color: #ffda2e;
+  }
+  
+  .section-footer .widget-a .w-title-a {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    color: #26b460;
+  }
+  
+  footer {
+    background: #DCF8C6;
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  footer .copyright-footer {
+    font-size: 12px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  footer .credits {
+    font-size: 14px;
+  }
+  
+/*------/ Socials /------*/
+.socials-a{
+    background: #ffda2e;
+}
+.socials-a .list-inline-item:not(:last-child) {
+    margin-right: 25px;
+  }
+.socials-foot-a{
+    color: #26b460;
+}
+.socials-foot-a:hover, .socials-foot-a:active, .socials-foot-a:focus{
+    color: #086C38;
+}

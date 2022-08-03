@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<br><br>
+<section id="productos-home"  class="section-bg" >
+<div class="container">
+
+  <header class="section-header">
+    <h2 class="section-title">Servicios</h2>
+  </header>
+
+  
+  <div class="row" >
+    <ng-container *ngFor="let categoria of dataServicios;let j = index">
+          <ng-container *ngFor="let tip of categoria.subtipos;let k= index">
+              <div class="col-12">
+                  <ul id="productos-flters">
+                      <li class="filter-active">{{tip.subtipo}}</li>
+                  </ul>   
+              </div>              
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" *ngFor="let pro of tip.productosservicios;let l = index">
+                  <div class="portfolio-wrap">
+                    <figure>
+                      <a class="btn.detalle" (click)="viewServicioProducto(pro)"><img src="{{pro.imagen}}" class="img-fluid" title="Más información"></a>
+                    </figure>
+                    <div class="portfolio-info">
+                      <h4><a class="btn-detalle" (click)="viewServicioProducto(pro)">{{pro.nombre}}</a></h4>
+                      <p>{{pro.descripcion}}</p>
+                    </div>
+                  </div>
+                </div>
+          </ng-container>  
+      </ng-container>
+    </div>
+    
+
+</div>
+</section><!-- #portfolio -->

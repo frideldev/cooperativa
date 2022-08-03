@@ -1,0 +1,48 @@
+
+<app-menu></app-menu>
+<!-- Hero Bell Template -->
+<section class="hero">
+  <div class="container text-center">
+
+    <div class="col-md-12">
+      <h1 class="rse-titulo">
+          U.I.F.
+      </h1>
+      <p class="tagline">
+        Unidad de Investigación Financiera
+      </p>
+      <a class="btn-rse btn-full" (click)="scroll(rse)" >Ver Información</a>
+    </div>
+  </div>
+
+</section>
+
+<section #rse id="rse" class="rse-contenido">
+    <br> <br><br><br><br><br>
+  <div *ngIf="dataUif" class="features-row section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="wow fadeInLeft">
+              <h2>PREVENCIÓN DE LGI Y/O FT</h2>
+              <h3>Decreto Supremo N° 24771 de 31 de julio de 1997 aprueba el Reglamento de la Unidad de Investigación Financiera</h3>
+              <p>
+                  La Unidad de Investigaciones Financieras (UIF) es una entidad pública descentralizada con personalidad jurídica de derecho público, autonomía de gestión administrativa, financiera, legal y técnica, bajo tuición del Ministerio de Economía y Finanzas Públicas, y es la unidad encargada de recibir, solicitar, analizar y, en su caso, transmitir a las autoridades competentes la información necesaria debidamente procesada vinculada a la legitimación de ganancias ilícitas y financiamiento del terrorismo. La cooperativa se encuentra fielmente comprometida en la lucha contra el nombrado flagelo.
+              </p>
+              <p>PREVENIR LA LEGITIMACIÓN DE GANANCIAS ILICITAS ES TAREA DE TODOS ..!!</p>
+              <div class="wow fadeInRight">
+                
+                <p class="wow fadeInRight" data-wow-duration="0.5s" *ngFor="let uif of dataUif">
+                  <a href="{{uif.archivo}}" target="_blank">
+                    <i class="fa fa-cloud-download wow fadeInRight" data-wow-duration="0.5s"></i>
+                    {{uif.titulo}}
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>

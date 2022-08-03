@@ -1,0 +1,35 @@
+<!--/ Carousel Star /-->
+<div class="intro intro-carousel">
+
+<owl-carousel-o *ngIf="dataSlides" [options]="carouselOptions"  >
+    <ng-container *ngFor="let image of dataSlides?.data">
+      <ng-template carouselSlide>
+      <div class="carousel-item-a intro-item bg-image" [ngStyle]="{'background-image':'url('+image.image_ruta+')'}">
+      <div class="overlay-slide overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    <br><br>
+                    <h1 class="intro-title mb-4">
+                      <!--<span class="color-b">Microcredito </span> El Crédito-->
+                      {{image?.image}}</h1>
+                    <p *ngIf="image?.image_descripcion" class="intro-title-top" [innerHTML]="image?.image_descripcion | safeHtml"></p>
+                    <p class="intro-subtitle intro-price">
+                      <a *ngIf="image?.image_exteral_link" href="{{image?.image_exteral_link}}" routerLinkActive="router-link-active" ><span class="price-a">Más información</span></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>
+
+  <!--/ Carousel end /-->

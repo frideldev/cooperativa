@@ -1,0 +1,102 @@
+.rse-titulo{
+    font-size: 60px;
+  }
+  
+  
+  /* ==================================================
+    Hero Styling
+  ================================================== */
+  
+  .hero {
+      display: table;
+      position: relative;
+      background-image: url(/photos/1/generales/uif/uif01.jpg);
+      background-size: cover;
+      padding: 150px 0;
+      color: #fff;
+      width: 100%;
+      height: 100vh;
+    }
+    
+    .hero:after {
+      content: '';
+      z-index: 0;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.65);
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+    }
+    
+    .hero-brand {
+      margin-bottom: 75px;
+      display: inline-block;
+    }
+    
+    .hero-brand:hover {
+      opacity: .75;
+    }
+    
+    .tagline {
+      font-family: "Raleway", Helvetica, Arial, sans-serif;
+      font-size: 26px;
+      margin: 45px 0 75px 0;
+      color: #fff;
+    }
+    .btn-rse {
+      background-color: #26b460;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      color: #fff;
+      padding: 15px 45px;
+      border-radius: 50px;
+      cursor:pointer;
+    }
+  
+    /* Memorias RSE*/
+    #rse p {
+      line-height: 24px;
+      color: #777;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    
+    #rse i {
+      color: #666666;
+      font-size: 20px;
+      transition: 0.5s;
+      float: left;
+      padding: 0 15px 0px 0;
+      line-height: 1;
+    }
+    
+    #rse i:before {
+      background: #26b460;
+      background: linear-gradient(45deg, #26b460 0%, #38c172 100%);
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #rse h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #26b460;
+    }
+    
+    #rse h3 {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      font-style: italic;
+      color: #999;
+    }

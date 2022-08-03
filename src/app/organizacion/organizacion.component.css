@@ -1,0 +1,95 @@
+#organizacion p {
+    line-height: 24px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  #organizacion i {
+    color: #666666;
+    font-size: 20px;
+    transition: 0.5s;
+    float: left;
+    padding: 0 15px 0px 0;
+    line-height: 1;
+  }
+  
+  #organizacion i:before {
+    background: #26b460;
+    background: linear-gradient(45deg, #26b460 0%, #38c172 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #organizacion h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #26b460;
+  }
+  
+  #organizacion h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-style: italic;
+    color: #999;
+  }
+
+  /* Comites
+--------------------------------*/
+#comites {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+#comites #comites-list {
+  padding: 0;
+  list-style: none;
+}
+
+#comites #comites-list li {
+  border-bottom: 1px solid #ddd;
+}
+
+#comites #comites-list a {
+  padding: 18px 0;
+  display: block;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 300;
+  padding-right: 20px;
+  color: #006C2D;
+}
+
+#comites #comites-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 16px;
+}
+
+#comites #comites-list p {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  #comites #comites-list a {
+    font-size: 18px;
+  }
+  #comites #comites-list i {
+    top: 13px;
+  }
+}
+
+#comites #comites-list a.collapsed:hover {
+  color: #006C2D;
+}
+
+#comites #comites-list a.collapsed {
+  color: #38C172;
+}
+
+#comites #comites-list a.collapsed i::before {
+  content: "\f067" !important;
+}

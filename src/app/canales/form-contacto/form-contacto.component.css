@@ -1,0 +1,90 @@
+/* Agente Solicitud Credito*/
+#floater{
+    position: absolute;
+      bottom: 5px;
+      right: 150px;
+      width: 60px;
+      height: 100px;
+      -webkit-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+      z-index: 1001;
+      border-radius: 3px 0 0 3px;
+      padding: 1px;
+      text-align: center;
+      box-sizing: border-box;
+      display: inline-block;
+  }
+  #floater2{
+    position: absolute;
+      bottom: 80px;
+      right: 150px;
+      width: 60px;
+      height: 100px;
+      -webkit-transition: all 2s ease-in-out;
+      transition: all 2s ease-in-out;
+      z-index: 1001;
+      border-radius: 3px 0 0 3px;
+      padding: 1px;
+      text-align: center;
+      box-sizing: border-box;
+      display: inline-block;
+  }
+/*validation*/
+
+.ng-valid[required], .ng-valid.required {border: 1px solid #38C172;}
+.error {color:#ff0000;}
+.success { color:green; }
+.contact-message { text-align: center; }
+.cmspage {
+    margin-top: 75px;
+}
+.page-desc{
+    color: #38C172;
+}
+.linksInnerPage .link-bottom {
+    Width: 20%;
+    height: 100%;
+    float: left;
+    color: #38C172;
+    font-size: 12px;
+    padding: 11px 14px;
+    display: inline-flex;
+}
+
+.linksInnerPage .link-bottom span {
+    font-family: 'Open Sans Bold';
+}
+.linksInnerPage .link-bottom p {
+    font-size: 12px;
+    line-height: 1.3em;
+    margin: 7px 0 0 0;
+}
+.linksInnerPage .link-bottom img {
+    display: inline;
+    padding: 0!important;
+    max-height: 39px;
+    max-width: 39px;
+    margin-right: 15px;
+    margin-top: 4px;
+}
+@media (max-width: 499px){
+
+
+.linksInnerPage .link-bottom {
+    padding: 18px 4px!important;
+ }
+.linksInnerPage .link-bottom img {
+    max-height: 45px!important;
+    max-width: 27px!important;
+    margin: 0 auto!important;
+}
+.linksInnerPage .link-bottom p {
+    display: none;
+}
+}
+
+.btn-success{
+    color:rgb(255, 255, 255);
+    background-color: rgb(56, 193, 114) !important;
+    border-color: rgb(56, 193, 114) !important;
+}

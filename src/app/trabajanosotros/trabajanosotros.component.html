@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+<div class="container">
+<br><br><br><br><br><br><br>
+<p>Necesitamos contar con un Equipo de Alto Rendimiento por eso, buscamos los mejores Talentos y que compartan nuestros Valores de responsabilidad, dinamismo, compromiso, honestidad y servicio.
+</p>
+<!--/ Section Portfolio Star /-->
+<h2>Postulaciones Vigentes</h2>
+</div>
+<section #secciones id="work" class="portfolio-mf sect-pt4 route">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-md-4" *ngFor="let trabajo of dataTrabajaNosotros">
+          <div class="work-box">
+            <a  href='{{trabajo.archivo}}' target="_blank">
+              <div class="work-img">
+                <img src="{{trabajo.imagen}}" alt="" class="img-fluid">
+              </div>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-9">
+                    <h2 class="w-title">{{trabajo.nombre}}</h2>
+                    <div class="w-more">
+                      <span class="w-date" [innerHTML]="trabajo.descripcion_corta | safeHtml"></span>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="w-like">
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </section>
+  <!--/ Section Portfolio End /-->

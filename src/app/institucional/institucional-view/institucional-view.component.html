@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+<br><br><br><br><br><br>
+<div class="container" *ngIf="dataEntradas">
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 col-12" *ngFor="let entrada of dataEntradas; let i = index">
+        <div class="card" >
+            <div class="card-front">
+                <img *ngIf="entrada.imagen; else imgdefault" src="{{entrada.imagen}}" alt="" >
+                <ng-template #imgdefault>
+                    <img src="/photos/2/noticias/noticia01.jpg" alt="">
+                </ng-template>
+            </div>
+            <div class="card-back">
+                <h2>{{entrada.titulo}}<br>
+                  <span [innerHTML]="entrada.descripcion | safeHtml"></span>
+                </h2>
+                <div class="social-icons">
+                    <a *ngIf="entrada.imagen" (click)="ngxSmartModalService.getModal('imagenModal'+i).open()" class="fa fa-search-plus" aria-hidden="true"></a>
+                    <a *ngIf="entrada.video" (click)="abrirVideo(entrada.titulo,entrada.video)" class="fa fa-play-circle" aria-hidden="true"></a>
+                    <a *ngIf="entrada.archivo" (click)="ngxSmartModalService.getModal('archivoModal'+i).open()" class="fa fa-arrow-circle-down" aria-hidden="true"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <div  *ngFor="let entrada of dataEntradas; let i = index" >
+      <ngx-smart-modal identifier="imagenModal{{i}}"
+      customClass="nsm-dialog-animation-ttb medium-modal">
+          <img class="modal-image" src="{{entrada.imagen}}" alt="{{entrada.imagen}}">
+      </ngx-smart-modal>
+      <ngx-smart-modal identifier="archivoModal{{i}}"
+        customClass="nsm-dialog-animation-ttb nsm-centered">
+        <h1>{{entrada.titulo}}</h1>
+        <p [innerHTML]="entrada.descripcion | safeHtml"></p>
+        <a href="{{entrada.archivo}}" target="_blank">
+            <i class="fa fa-cloud-download wow fadeInRight" data-wow-duration="0.5s"></i>
+            Archivo {{entrada.titulo}}
+        </a>
+      </ngx-smart-modal>
+  </div>
+  
+</div>
+
+<ngx-smart-modal #videoModal
+        identifier="videoModal"
+        customClass="nsm-dialog-animation-btt medium-modal">
+        <h3>Video {{tituloActivo}}</h3>
+        <iframe *ngIf="videoModal.isVisible()"
+        #rickroll
+        width="100%"
+        height="500"
+        style="max-width: 100%;"
+        [src]="videoActivo"
+        frameborder="0"
+        allowfullscreen></iframe>
+</ngx-smart-modal>
+
+  
+

@@ -1,0 +1,195 @@
+<br><br><br>
+<div class="card wizard-card" data-color="green" id="wizardProfile">
+    <form class="formulario" [formGroup]="registerForm" >
+<ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
+
+  <ng-wizard-step [title]="'Paso 1'" [description]="'Información del Prestamo'">
+    <div class="container">
+      <div class="row align-items-center justify-content-center radio">
+        <div class="col-12 col-sm-6 col-md-4">
+          <input type="radio" name="m_personal" id="personal">
+          <label for="personal">
+            <i class="fa fa-male"></i><br>
+            PERSONAL
+          </label>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <input type="radio" name="m_negocio" id="negocio">
+          <label for="negocio">
+            <i class="fa fa-money"></i><br>
+            NEGOCIO
+          </label>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <input type="radio" name="m_hipotecario" id="hipotecario">
+          <label for="hipotecario">
+            <i class="fa fa-home"></i><br>
+            HIPOTECARIO
+          </label>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <input type="radio" name="m_vehiculo" id="vehiculo">
+          <label for="vehiculo" placement="top" ngbTooltip="este es el texto">
+            <i class="fa fa-car"></i><br>
+            VEHICULO
+          </label>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <input type="radio" name="m_libre_disponibilidad" id="comercial" placement="top" ngbTooltip="este es el texto">
+          <label for="comercial" tooltip="<b class='text-danger'>Bold text </b> JullerOS" [options]="myOptions">
+            <i class="fa fa-handshake-o"></i><br>
+            LIBRE DISPONIBILIDAD
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </ng-wizard-step>
+
+  <ng-wizard-step [title]="'Paso 2'" [description]="'Información del solicitante'">
+      
+      <div class="row">
+         <h4 class="info-text"> Ingrese su información personal para la validación</h4>
+         <div class="col-sm-10 col-sm-offset-1">
+            <div class="form-group">
+              <label>Nombres <small>(requerido)</small>:</label>
+              <input type="text" name="nombres" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': f.name.errors  &amp;&amp; (f.name.dirty || f.name.touched) }"   />
+                <div *ngIf=" f.name.errors &amp;&amp; (f.name.dirty || f.name.touched)" class="text-danger">
+                  <div *ngIf="f.name.errors.required">Se requiere los Nombres</div>
+                </div>
+            </div>
+         </div>
+          <div class="col-sm-5 col-sm-offset-1"> 
+          <div class="form-group">
+            <label>Primer Apellido <small>(requerido)</small>:</label>
+            <input type="text"  name="primer_apellido" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': f.lastName.errors  &amp;&amp; (f.lastName.dirty || f.lastName.touched) }"   />
+            <div *ngIf=" f.lastName.errors &amp;&amp; (f.lastName.dirty || f.lastName.touched)" class="text-danger">
+                <div *ngIf="f.lastName.errors.required">Se requiere el Primer Apellido</div>
+            </div>
+          </div>
+          </div>
+         <div class="col-sm-5 col-sm-offset-1"> 
+          <div class="form-group">
+            <label>Segundo Apellido:</label>
+            <input type="text" name="segundo_apellido" formControlName="surname" class="form-control" [ngClass]="{ 'is-invalid': f.surname.errors  &amp;&amp; (f.surname.dirty || f.surname.touched) }"   />
+            <div *ngIf=" f.surname.errors &amp;&amp; (f.surname.dirty || f.surname.touched)" class="text-danger">
+                <div *ngIf="f.surname.errors.required">Se requiere el Segundo Apellido</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="form-group">
+                <label>Estado civil</label>
+                <select class="form-control" name="estado_civil" formControlName="maritalStatus" [ngClass]="{ 'is-invalid': f.maritalStatus.errors  &amp;&amp; (f.maritalStatus.dirty || f.maritalStatus.touched) }">
+                  <option disabled="" selected="">- Seleccionar -</option>
+                  <option value="S">Soltero(a)</option>
+                  <option value="C">Casado(a)</option>
+                  <option value="D">Divorciado(a)</option>
+                  <option value="V">Viudo(a)</option>
+                </select>
+                <div *ngIf=" f.maritalStatus.errors &amp;&amp; (f.maritalStatus.dirty || f.maritalStatus.touched)" class="text-danger">
+                    <div *ngIf="f.maritalStatus.errors.required">Se requiere el Estado Civil</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="form-group">
+                <label>Profesión u ocupación</label>
+                <input type="text"  name="profesion" formControlName="occupation" class="form-control" [ngClass]="{ 'is-invalid': f.lastName.errors  &amp;&amp; (f.lastName.dirty || f.lastName.touched) }"   />
+                <div *ngIf=" f.occupation.errors &amp;&amp; (f.occupation.dirty || f.occupation.touched)" class="text-danger">
+                    <div *ngIf="f.occupation.errors.required">Se requiere la Prefesión u Ocupación</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-4 col-sm-offset-1">
+            <div class="form-group">
+                <label>Fecha de nacimiento </label>
+                <input name="date" type="date"  formControlName="birthday" class="form-control" placeholder="dd/mm/aaaa" />
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label>Tel&eacute;fono </label>
+                <input name="phone" type="text" formControlName="phone" class="form-control" placeholder="Teléfono">
+                <div *ngIf=" f.phone.errors &amp;&amp; (f.phone.dirty || f.phone.touched)" class="text-danger">
+                    <div *ngIf="f.phone.errors.required">Se requiere el Tel&eacute;fono</div>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+                <label>Celular (Whatsapp) </label>
+                <input name="whatsapp" type="movil" formControlName="whatsapp" class="form-control" placeholder="Whatsapp">
+                <div *ngIf=" f.whatsapp.errors &amp;&amp; (f.whatsapp.dirty || f.whatsapp.touched)" class="text-danger">
+                    <div *ngIf="f.whatsapp.errors.required">Se requiere el Tel&eacute;fono con Whatsapp</div>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-10 col-sm-offset-1">
+              <div class="form-group">
+                  <label>Correo Electrónico  <small>(requerido)</small></label>
+                  <input name="correo" type="email" formControlName="email" class="form-control valid" placeholder="Correo Electrónico" aria-required="true" aria-invalid="false">
+                  <div *ngIf=" f.email.errors &amp;&amp; (f.email.dirty || f.email.touched)" class="text-danger">
+                      <div *ngIf="f.email.errors.required">Se requiere el E-mail</div>
+                      <div *ngIf="f.email.errors.email">Ingrese un E-mail válido</div>
+                  </div>
+              </div>
+
+          </div>
+          <div class="col-sm-10 col-sm-offset-1">
+            <div class="form-group">
+                <label>Direccion Domicilio</label>
+                <input name="direccion" formControlName="address" type="text" class="form-control" placeholder="">
+                <div *ngIf=" f.address.errors &amp;&amp; (f.address.dirty || f.address.touched)" class="text-danger">
+                    <div *ngIf="f.address.errors.required">Se requiere el Domicilio</div>
+                </div>
+            </div>
+        </div>
+        
+        
+      
+    </div>
+  </ng-wizard-step>
+
+  <ng-wizard-step [title]="'Paso 3'" [description]="'Datos del Préstamo'">
+      <span>Step 3 content</span>
+      <div class="row">
+       <div class="col-sm-5 col-sm-offset-1">
+         <div class="form-group">
+          <label>Monto Solicitado</label>
+          <input name="monto" type="text" formControlName="money" class="form-control" placeholder="Monto">
+                <div *ngIf=" f.money.errors &amp;&amp; (f.money.dirty || f.money.touched)" class="text-danger">
+                    <div *ngIf="f.money.errors.required">Se requiere el Monto</div>
+                </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        
+            <div class="form-group">
+                <label>Moneda</label>
+                <select class="form-control" name="moneda">
+                  <option>Bs.</option>
+                  <option>Usd.</option>
+                </select>
+            </div>
+        
+      </div>
+      <div class="col-sm-10">
+        <div class="form-group">
+          <label>Destino</label>
+          <textarea name="proposito" class="form-control" formControlName="purpose" rows="5"  placeholder=""></textarea>
+          <div *ngIf=" f.purpose.errors &amp;&amp; (f.purpose.dirty || f.purpose.touched)" class="text-danger">
+              <div *ngIf="f.purpose.errors.required">Se requiere el Destino</div>
+          </div>
+         </div>
+      </div>
+      </div>
+  </ng-wizard-step>
+
+
+</ng-wizard>
+</form>
+</div>

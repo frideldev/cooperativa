@@ -1,0 +1,126 @@
+/* About Us Section
+--------------------------------*/
+
+#cooperativa {
+    background: #fff;
+    padding: 60px 0;
+  }
+  
+  #cooperativa .about-container .background {
+    margin: 20px 0;
+  }
+  
+  #cooperativa .about-container .content {
+    background: #fff;
+  }
+  
+  #cooperativa .about-container .title {
+    color: #333;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: justify;
+  }
+  
+  #cooperativa .about-container p {
+    line-height: 26px;
+    text-align: justify;
+  }
+  
+  #cooperativa .about-container p:last-child {
+    margin-bottom: 0;
+  }
+  
+  #cooperativa .about-container .icon-box {
+    background: #fff;
+    background-size: cover;
+    padding: 0 0 30px 0;
+  }
+  
+  #cooperativa .icon-box{
+      text-align: center;
+  }
+  
+  #cooperativa .about-container .icon-box .title {
+    margin-left: 50px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  #cooperativa .about-container .icon-box .title a {
+    color: #283d50;
+  }
+  
+  #cooperativa .about-container .icon-box .description {
+    margin-left: 50px;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  
+  #cooperativa .about-extra {
+    padding-top: 60px;
+    text-align: justify;
+  }
+  
+  #cooperativa .about-extra h4 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  
+  #cooperativa i {
+    color: #666666;
+    font-size: 20px;
+    transition: 0.5s;
+    /*float: left;*/
+    padding: 0 15px 0px 0;
+    line-height: 1;
+  }
+  
+  #cooperativa i:before {
+    background: #26b460;
+    background: linear-gradient(45deg, #26b460 0%, #38c172 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #cooperativa .valores{
+      margin-top: 15px;
+      margin-bottom: 15px;
+  }
+
+  /* Agregado desde Organizacion*/
+#cooperativa p {
+    line-height: 24px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+#cooperativa i {
+    color: #666666;
+    font-size: 20px;
+    transition: 0.5s;
+    float: left;
+    padding: 0 15px 0px 0;
+    line-height: 1;
+  }
+  
+#cooperativa i:before {
+    background: #26b460;
+    background: linear-gradient(45deg, #26b460 0%, #38c172 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+#cooperativa h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #26b460;
+  }
+  
+#cooperativa h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-style: italic;
+    color: #999;
+  }

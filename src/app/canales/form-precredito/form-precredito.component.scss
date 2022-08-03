@@ -1,0 +1,43 @@
+@import '../../../../node_modules/angular-archwizard/archwizard.scss';
+@import '../../../../node_modules/angular-archwizard/variables';
+
+aw-wizard.custom-global-css {
+    aw-wizard-navigation-bar.horizontal ul.steps-indicator{
+        background: #38C172;
+        .label{
+            color: #FFFFFF;
+        }
+        a:hover, a:hover .label{
+            color: #027733;
+        }
+    }
+    aw-wizard-navigation-bar.horizontal ul.steps-indicator li {
+      &.current {
+        .label {
+            color: #FFFFFF;
+            text-shadow: 0 1.36px 1.896px #006C2D, 0 -1px 1px #fff;
+        }
+  
+        .step-indicator {
+            border: 2px solid #FFDA2E;
+            color: #FFDA2E;
+        }
+      }
+  
+      .label {
+        text-transform: none;
+      }
+    }
+  
+    aw-wizard-step {
+      .centered-content {
+        background-color: #eeeeee;
+        color: blue;
+      }
+  
+      h3 {
+        text-decoration: underline;
+        color: darkblue;
+      }
+    }
+  }

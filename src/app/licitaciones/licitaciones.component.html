@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<br><br><br><br><br><br><br>
+
+<div class="container">
+<h2>Convocatoria a Licitaciones Públicas</h2>
+<table class="table table-striped">
+    <thead>
+      <tr class="row bg-success text-white">
+        <th class="col-1 " scope="col text-center">#</th>
+        <th class="col-6  col-md-4 col-lg-3 d-lg-block" scope="col text-center">Objeto</th>
+        <th class="d-none col-md-4 col-lg-4 d-md-block " scope="col text-center">Detalle de Contratación</th>
+        <th class="d-none          col-lg-1 d-lg-block " scope="col text-center">Fecha Publicación</th>
+        <th class="d-none          col-lg-1 d-lg-block " scope="col text-center">Fecha Presentación</th>
+        <th class="col-5  col-md-3 col-lg-2 d-lg-block " scope="col text-center">Documentos para descargar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row text-row" *ngFor="let licitacion of dataLicitaciones; let j = index">
+        <th class="col-1" scope="row">{{j+1}}</th>
+        <td class="col-6  col-md-4 col-lg-3 d-lg-block">
+          {{licitacion.titulo}} <br>
+          <h6 class="my-1"><small class="d-lg-none">Fecha Publicación<span class="d-lg-none badge badge-success">{{licitacion.fecha_inicio}}</span></small></h6>
+          <h6 class="my-1"><small class="d-lg-none">Fecha Presentación<span class="d-lg-none badge badge-success">{{licitacion.fecha_limite_presentacion}}</span></small></h6>
+        </td>
+        <td class="d-none col-md-4 col-lg-4 d-md-block" [innerHTML]="licitacion.descripcion | safeHtml">hola nando</td>
+        <td class="d-none          col-lg-1 d-lg-block">{{licitacion.fecha_inicio}}</td>
+        <td class="d-none          col-lg-1 d-lg-block">{{licitacion.fecha_limite_presentacion}}</td>
+        <td class="col-5  col-md-3 col-lg-2 d-lg-block">
+          <h6 class="my-1" *ngFor="let entrada of licitacion.entradas">
+            <small><a class="text-entrada"  href="{{entrada.archivo}}" target="_blank" >{{entrada.titulo}}</a></small>
+          </h6>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

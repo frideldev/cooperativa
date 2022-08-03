@@ -1,0 +1,252 @@
+<core-navbar></core-navbar>
+<br><br><br><br><br><br><br>
+<alert></alert> 
+
+<div class="card wizard-card" data-color="green" id="wizardProfile">
+ 
+<form class="formulario" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h4 class="info-text" style="text-align: center;">Formulario de solicitud de crédito en línea</h4>
+<aw-wizard #wizard [navBarLayout]="'large-empty-symbols'" class="custom-global-css">
+ 
+  <aw-wizard-step stepTitle="Información del Préstamo" [canExit]="canExitStep1" >
+    <ng-template awWizardStepSymbol><i class="fa fa-check-circle"></i></ng-template>
+    <div class="centered-content justify-content-center step-container">
+      <h4 class="info-text"> Seleccione el tipo de prestamo que desea solicitar.</h4>  
+      
+      <div class="row align-items-center justify-content-center radio">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 radio-items">
+          <input type="radio" name="tipoprestamo"  value="personal" formControlName="tipoprestamo" id="personal">
+          <label awNextStep for="personal" class="form01-card credentialing">
+            <div class="card-overlay"></div>
+            <div class="circle">
+              <img src="/assets/img/precredito/avatar_green.png">
+            </div>
+            <p>Crédito Personal</p>  
+          </label>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 radio-items">
+          <input type="radio" name="tipoprestamo" value="negocio" formControlName="tipoprestamo" id="negocio">
+          <label awNextStep for="negocio" class="form01-card credentialing">
+            <div class="card-overlay"></div>
+            <div class="circle">
+              <img src="/assets/img/precredito/money_green.png">
+            </div>
+            <p>Crédito para Negocio</p>  
+          </label>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 radio-items">
+          <input type="radio" name="tipoprestamo" value="hipotecario" formControlName="tipoprestamo" id="hipotecario">
+          <label awNextStep for="hipotecario" class="form01-card credentialing">
+            <div class="card-overlay"></div>
+            <div class="circle">
+              <img src="/assets/img/precredito/house02_green.png">
+            </div>
+            <p>Crédito Hipotecario</p>  
+          </label>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 radio-items">
+          <input type="radio" name="tipoprestamo"  value="vehiculo" formControlName="tipoprestamo" id="vehiculo">
+          <label awNextStep for="vehiculo" class="form01-card credentialing">
+            <div class="card-overlay"></div>
+            <div class="circle">
+              <img src="/assets/img/precredito/car_green.png">
+            </div>
+            <p>Crédito Vehicular</p>  
+          </label>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 radio-items">
+          <input (click)="nextStepWizard()" type="radio" name="tipoprestamo" value="libre_disponibilidad" formControlName="tipoprestamo" id="comercial" placement="top" ngbTooltip="este es el texto">
+          <label  for="comercial" class="form01-card credentialing" >
+            <div class="card-overlay"></div>
+            <div class="circle">
+              <img src="/assets/img/precredito/like_green.png">
+            </div>
+            <p>Libre Disponibilidad</p>  
+          </label>
+        </div>
+        
+      </div>
+      <div *ngIf=" f.tipoprestamo.errors &amp;&amp; (f.tipoprestamo.dirty || f.tipoprestamo.touched)" class="text-danger">
+            <div *ngIf="f.tipoprestamo.errors.required">Debe Seleccionar al menos un tipo</div>
+    </div>
+  
+    </div>
+    
+    
+    
+  </aw-wizard-step>
+
+  <aw-wizard-step stepTitle="Información del solicitante" [canExit]="canExitStep2" >
+     <ng-template awWizardStepSymbol><i class="fa fa-user"></i></ng-template>
+     <div class="container step-container">
+     <h4 class="info-text"> Ingrese su información personal para la validación.</h4>
+     <p class="step-legenda">Todos los datos marcados con <span>*</span> son obligatorios, luego de rellenar todos los campos precione en el boton <span awNextStep>Siguiente</span> para continuar.</p> 
+      <div class="row">
+        
+
+        <div class="col-lg-6 col-sm-offset-1">
+            <div class="form-group">
+                <label>Nombre(s) *:</label>
+                <input type="text" formControlName="nombres" class="form-control" [ngClass]="{ 'is-invalid': f.nombres.errors  &amp;&amp; (f.nombres.dirty || f.nombres.touched) }"   />
+                <div *ngIf=" f.nombres.errors &amp;&amp; (f.nombres.dirty || f.nombres.touched)" class="text-danger">
+                    <div *ngIf="f.nombres.errors.required">Nombre es un dato requerido</div>
+                    <div *ngIf="f.nombres.errors.maxlength">Introduzca menos de 255 caracteres</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-offset-1">   
+            <div class="form-group">
+                <label>Apellido(s) *:</label>
+                <input type="text" formControlName="primer_apellido" class="form-control" [ngClass]="{ 'is-invalid': f.primer_apellido.errors  &amp;&amp; (f.primer_apellido.dirty || f.primer_apellido.touched) }"   />
+                <div *ngIf=" f.primer_apellido.errors &amp;&amp; (f.primer_apellido.dirty || f.primer_apellido.touched)" class="text-danger">
+                    <div *ngIf="f.primer_apellido.errors.required">Apellido es un dato requerido</div>
+                    <div *ngIf="f.primer_apellido.errors.maxLength">Introduzca menos de 255 caracteres</div>
+                </div>
+            </div>
+        </div>     
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-lg-4  col-sm-offset-1">
+          <div class="form-group">
+              <label>Fecha de nacimiento *:</label>
+              <input formControlName="fecha_nacimiento"  name="fecha_nacimiento" type="date" class="form-control" placeholder="dd/mm/aaaa" [ngClass]="{ 'is-invalid': f.fecha_nacimiento.errors &amp;&amp; (f.fecha_nacimiento.dirty || f.fecha_nacimiento.touched)}">
+              <div *ngIf=" f.fecha_nacimiento.errors &amp;&amp; (f.fecha_nacimiento.dirty || f.fecha_nacimiento.touched)" class="text-danger">
+                    <div *ngIf="f.fecha_nacimiento.errors.required">Fecha Nacimiento es un dato requerido</div>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+            <div class="form-group">
+                <label>Teléfono *:</label>
+                <input type="text" formControlName="telefono" class="form-control" [ngClass]="{ 'is-invalid': f.telefono.errors  &amp;&amp; (f.telefono.dirty || f.telefono.touched) }"   />
+                <div *ngIf=" f.telefono.errors &amp;&amp; (f.telefono.dirty || f.telefono.touched)" class="text-danger">
+                    <div *ngIf="f.telefono.errors.required">Teléfono es un dato requerido</div>
+                    <div *ngIf="f.telefono.errors.maxLength">Introduzca menos de 20 caracteres</div>
+                    <div *ngIf="f.telefono.errors.pattern">Ingrese un n&uacute;mero v&aacute;lido</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-4">
+            <div class="form-group">
+                <label>Celular(Whatsapp) *:</label>
+                <input type="text" formControlName="celular_whatsapp" class="form-control" [ngClass]="{ 'is-invalid': f.celular_whatsapp.errors  &amp;&amp; (f.celular_whatsapp.dirty || f.celular_whatsapp.touched) }"   />
+                <div *ngIf=" f.celular_whatsapp.errors &amp;&amp; (f.celular_whatsapp.dirty || f.celular_whatsapp.touched)" class="text-danger">
+                    <div *ngIf="f.celular_whatsapp.errors.required">Teléfono es un dato requerido</div>
+                    <div *ngIf="f.celular_whatsapp.errors.maxLength">Introduzca menos de 10 caracteres</div>
+                    <div *ngIf="f.celular_whatsapp.errors.pattern">Ingrese un n&uacute;mero v&aacute;lido</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div class="form-group">
+                <label>Correo Electrónico *:</label>
+                <input type="text" formControlName="correo" class="form-control" [ngClass]="{ 'is-invalid': f.correo.errors &amp;&amp; (f.correo.dirty || f.correo.touched)}" />
+                <div *ngIf=" f.correo.errors &amp;&amp; (f.correo.dirty || f.correo.touched)" class="text-danger">
+                    <div *ngIf="f.correo.errors.required">Correo electrónico es un dato requerido</div>
+                    <div *ngIf="f.correo.errors.email">Debe ser un correo valido</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div class="form-group">
+                <label>Dirección Domicilio *:</label>
+                <input type="direccion" formControlName="direccion" class="form-control" [ngClass]="{ 'is-invalid': f.direccion.errors  &amp;&amp; (f.direccion.dirty || f.direccion.touched) }"   />
+                <div *ngIf=" f.direccion.errors &amp;&amp; (f.direccion.dirty || f.direccion.touched)" class="text-danger">
+                    <div *ngIf="f.direccion.errors.required">Dirección es un dato requerido</div>
+                    <div *ngIf="f.direccion.errors.maxLength">Introduzca menos de 255 caracteres</div>
+                </div>
+            </div>
+      </div>
+      <div class="col-sm-6 col-sm-offset-1">
+          <div class="form-group">
+            <label>Estado civil *:</label>
+            <select class="custom-select" (change)="changeEstado($event)" formControlName="estado_civil" [ngClass]="{ 'is-invalid': f.estado_civil.errors &amp;&amp; (f.estado_civil.dirty || f.estado_civil.touched)}">
+                <option value="" disabled="">- Seleccionar -</option>
+                <option [value]="item.id" *ngFor="let item of Estados" >
+                    {{item.name}}
+                </option>
+            </select>
+            <div *ngIf=" f.estado_civil.errors &amp;&amp; (f.estado_civil.dirty || f.estado_civil.touched)" class="text-danger">
+                <div *ngIf="f.estado_civil.errors.required">Estado Civil es un dato requerido</div>
+                <div *ngIf="f.estado_civil.errors.maxLength">Introduzca menos de 2 caracteres</div>
+            </div>
+
+          </div>
+      </div>
+      <div class="col-sm-6 col-sm-offset-1">   
+        <div class="form-group">
+            <label>Profesión u ocupación</label>
+            <input name="profesion" type="text" formControlName="profesion" class="form-control" placeholder="">
+            <div *ngIf=" f.profesion.errors &amp;&amp; (f.profesion.dirty || f.profesion.touched)" class="text-danger">
+                    <div *ngIf="f.profesion.errors.maxLength">Introduzca menos de 255 caracteres</div>
+                </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>  <!-- fin conteiner paso 2 -->
+    <div class="btn-group">
+            <button type="button" class="btn btn-secondary" awPreviousStep>Anterior</button>
+            <button type="button" class="btn btn-success"  awNextStep>Siguiente</button>
+    </div>    
+    
+  </aw-wizard-step>
+
+  <aw-wizard-step stepTitle="Datos del Préstamo" >
+     <ng-template awWizardStepSymbol><i class="fa fa-gg"></i></ng-template>
+     <div class="row step-container">
+      <h4 class="info-text"> Indicar monto a solicitar.</h4>
+      <p class="step-legenda">Antes de enviar su solicitud verifique nuevamente toda la informacion ingresada, puede volver al paso anterior precionando el boton <span>Anterior</span>. Para finalizar su solicitud precione el boton <span awNextStep>Enviar Solicitud</span></p> 
+        <div class="col-md-5 col-sm-offset-1">
+            <div class="form-group">
+                <label>Monto Solicitado * :</label>
+                <input type="text" formControlName="monto" class="form-control" [ngClass]="{ 'is-invalid': f.monto.errors  &amp;&amp; (f.monto.dirty || f.monto.touched) }"   />
+                <div *ngIf=" f.monto.errors &amp;&amp; (f.monto.dirty || f.monto.touched)" class="text-danger">
+                    <div *ngIf="f.monto.errors.required">Monto es un dato requerido</div>
+                    <div *ngIf="f.monto.errors.pattern">Solo n&uacute;meros</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="form-group">
+                <label>Moneda *</label>
+                <select class="custom-select" (change)="changeMoneda($event)" formControlName="moneda">
+                    <option value="" disabled="">- Seleccionar -</option>
+                    <option [value]="item.id" *ngFor="let item of Monedas">
+                        {{item.name}}
+                    </option>
+                </select>
+                <div *ngIf=" f.moneda.errors &amp;&amp; (f.moneda.dirty || f.moneda.touched)" class="text-danger">
+                        <div *ngIf="f.moneda.errors.required">Moneda es un dato requerido</div>
+                    </div>
+              </div>
+
+        </div>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="form-group">
+                <label>Destino del Préstamo *:</label>
+                <textarea  rows="5" formControlName="proposito" class="form-control" [ngClass]="{ 'is-invalid': f.proposito.errors &amp;&amp; (f.proposito.dirty || f.proposito.touched) }" ></textarea>
+                <div *ngIf="f.proposito.errors &amp;&amp; (f.proposito.dirty || f.proposito.touched)" class="text-danger">
+                    <div *ngIf="f.proposito.errors.required">Destino del préstamo es un dato requerido</div>
+                    <div *ngIf="f.proposito.errors.minlength">Debe detallar un poco más el destino</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="form-group">
+                
+            </div> 
+        </div>
+      </div>
+      <div class="btn-group">
+            <button type="button" class="btn btn-secondary" awPreviousStep>Anterior</button>
+            <button type="submit" class="btn btn-success" [disabled]="!registerForm.valid "> Enviar Solicitud</button>
+    </div>
+     
+     
+  </aw-wizard-step>
+
+
+</aw-wizard>
+</form>
+</div>

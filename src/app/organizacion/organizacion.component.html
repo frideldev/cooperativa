@@ -1,0 +1,103 @@
+<app-cooperativa-menu [menu]='menu' (elemento)='scroll($event)'>
+
+  </app-cooperativa-menu>
+<br><br><br><br><br><br><br>
+<!--==========================
+      Product Advanced Featuress Section
+    ============================-->
+    <section id="organizacion">
+
+      <div class="features-row section-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow fadeInLeft">
+                <h2>Régimen de gobierno, administración y fiscalización interna</h2>
+                <h3>El Gobierno, la Dirección, Administración y Vigilancia de la Cooperativa se encuentran a cargo de:</h3>
+                <div class="wow fadeInRight">
+                  <i class="fa fa-check-circle-o wow fadeInRight" data-wow-duration="0.5s"></i>
+                  <p class="wow fadeInRight" data-wow-duration="0.5s">La Asamblea de Socios.</p>
+                  <i class="fa fa-check-circle-o wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s"></i>
+                  <p class="wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s">El Consejo de Administración.</p>
+                  <i class="fa fa-check-circle-o wow fadeInRight" data-wow-delay="0.4" data-wow-duration="0.5s"></i>
+                  <p class="wow fadeInRight" data-wow-delay="0.4s" data-wow-duration="0.5s">EL Consejo de Vigilancia.</p>
+                  <i class="fa fa-check-circle-o wow fadeInRight" data-wow-delay="0.6" data-wow-duration="0.5s"></i>
+                  <p class="wow fadeInRight" data-wow-delay="0.6s" data-wow-duration="0.5s">El Inspector de Vigilancia.</p>
+                  <i class="fa fa-check-circle-o wow fadeInRight" data-wow-delay="0.8" data-wow-duration="0.5s"></i>
+                  <p class="wow fadeInRight" data-wow-delay="0.8s" data-wow-duration="0.5s">El Gerente General.</p>
+                  <i class="wow fadeInRight fa fa-check-circle-o" data-wow-delay="1.0" data-wow-duration="0.5s"></i>
+                  <p class="wow fadeInRight " data-wow-delay="1.0s" data-wow-duration="0.5s">Los  Comités.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div #asamblea class="features-row ">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <img class="advanced-feature-img-right wow fadeInRight" src="img/advanced-feature-3.jpg" alt="">
+              <div class="wow fadeInLeft">
+                <h2>La Asamblea de Socios</h2>
+                <p>Es la máxima autoridad de la Cooperativa y sus acuerdos obligan a todos los socios presentes y ausentes, siempre que sus decisiones no contravengan, nuestra Constitución Política del Estado, Ley de Bancos y Entidades Financieras y normas reglamentarias, así como el Estatuto de la Cooperativa.</p>
+                <p>Las Asambleas podrán ser Ordinarias o Extraordinarias.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div #consejos class="features-row " >
+        <div class="container">
+          <div *ngIf="dataConsejos" class="row">
+            <div class="col-12" *ngFor="let concejo of dataConsejos.data">
+              <div class="wow fadeInLeft">
+                <h2>{{concejo?.titulo}}</h2>
+                <div [innerHTML]="concejo.descripcion"></div>
+                <div class="wow fadeInRight">
+                  <table class="table">
+                    <tbody>
+                      <tr *ngFor="let miembro of concejo.miembros">
+                        <th scope="row">{{miembro?.cargo}}</th>
+                        <td>{{miembro?.miembro}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div #comites class="features-row section-bg">
+          <div id="comites" class="container">
+            <div class="row">
+              <div class="col-12">
+                  <ul *ngIf="dataComites" id="comites-list" class="wow fadeInUp">
+                      <div *ngFor="let comite of dataComites?.data;let j = index">
+                        <li>
+                          <a data-toggle="collapse" class="collapsed" href="#comite{{j}}">{{comite?.titulo}}<i class="fa fa-minus"></i></a>
+                          <div id="comite{{j}}" class="collapse" data-parent="#comites-list">
+                             <div [innerHTML]="comite.descripcion"></div>
+                             <div class="wow fadeInRight">
+                                <table class="table" *ngIf="comite.miembros">
+                                  <tbody>
+                                    <tr *ngFor="let miembro of comite.miembros">
+                                      <th scope="row">{{miembro?.cargo}}</th>
+                                      <td>{{miembro?.miembro}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>   
+                          </div>
+                        </li>
+                        </div>
+          
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section><!-- #advanced-features -->

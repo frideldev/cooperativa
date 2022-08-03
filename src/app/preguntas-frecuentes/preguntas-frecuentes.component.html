@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<!--==========================
+      Frequently Asked Questions Section
+    ============================-->
+    <section id="faq">
+      <div class="container">
+
+        <div class="section-header">
+          <br><br><br>
+          <h3 class="section-title">Preguntas Frecuentes</h3>
+          <span class="section-divider"></span>
+         <!-- <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
+        </div>
+        
+        <ul *ngIf="dataFaqs" id="faq-list" class="wow fadeInUp">
+            <div *ngFor="let data of dataFaqs.data;let j = index">
+                <div *ngFor="let faq of data.faqs; let i = index">
+                    <li>
+                        <a data-toggle="collapse" class="collapsed" href="#faq{{(i*100)+j}}">{{faq.pregunta}}<i class="fa fa-minus"></i></a>
+                        <div id="faq{{(i*100)+j}}" class="collapse" data-parent="#faq-list">
+                          <p>
+                              {{faq.respuesta}}
+                          </p>
+                        </div>
+                      </li>
+                </div>
+    
+              </div>
+
+        </ul>
+
+      </div>
+    </section><!-- #faq -->

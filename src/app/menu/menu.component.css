@@ -1,0 +1,16 @@
+/* Agente Solicitud Credito*/
+#floater{
+    position: absolute;
+      bottom: 5px;
+      right: 150px;
+      width: 60px;
+      height: 100px;
+      -webkit-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+      z-index: 1001;
+      border-radius: 3px 0 0 3px;
+      padding: 1px;
+      text-align: center;
+      box-sizing: border-box;
+      display: inline-block;
+  }

@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+  <!-- Hero Bell Template -->
+  <section class="hero">
+    <div class="container text-center">
+
+      <div class="col-md-12">
+        <h1 class="rse-titulo">
+            Informes
+        </h1>
+        <p class="tagline">
+          Responsabilidad Social Empresarial
+        </p>
+        <a class="btn-rse btn-full" (click)="scroll(rse)" >Ver Informes</a>
+      </div>
+    </div>
+
+  </section>
+  
+  <section #rse id="rse" class="rse-contenido">
+      <br> <br><br><br><br><br>
+    <div *ngIf="dataInformes" class="features-row section-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="wow fadeInLeft">
+                <h2>Descripción</h2>
+                <h3>El informe de Responsabilidad Social Empresarial (RSE) es un documento que se elabora anualmente, hasta el 2013 fue denominado Memorias de RSE, a partir de Resolución ASFI 170/13 pasó a denominarse informe de RSE. Este informe da cuenta de las actuaciones, procesos y decisiones que se toman en materia de RSE durante la gestión reportada en los ámbitos organizacional, económico, social y ambiental.</h3>
+                <p>
+                    El informe es elaborado siguiendo las directrices de la normativa vigente (Resolución ASFI 1103/2015), el Global Reporting Initiative (GRI), la ISO 26000, entre otros y es verificado externamente por una empresa consultora que cuenta con metodología aprobada Internacionalmente.
+                </p>
+                <div class="wow fadeInRight">
+                  
+                  <p class="wow fadeInRight" data-wow-duration="0.5s" *ngFor="let informe of dataInformes.data">
+                    <a href="{{informe.archivo}}" target="_blank">
+                      <i class="fa fa-cloud-download wow fadeInRight" data-wow-duration="0.5s"></i>
+                      {{informe.titulo}}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </section>

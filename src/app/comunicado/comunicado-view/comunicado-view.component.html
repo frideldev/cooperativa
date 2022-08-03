@@ -1,0 +1,70 @@
+<app-menu></app-menu>
+ <!--/ Section Blog-Single Star /-->
+ <section class="blog-wrapper sect-pt4" id="blog">
+   <br><br><br><br><br>
+    <div class="container">
+      <div *ngIf="comunicado" class="row">
+        <div class="col-md-8">
+          <div class="post-box">
+            <div class="post-thumb">
+              <img src="{{comunicado.imagen}}" class="img-fluid" alt="">
+            </div>
+            <div class="post-meta">
+              <h1 class="article-title">{{comunicado.nombre}}</h1>
+              <ul>
+                <li>
+                    <a><i class="fa fa-calendar-o"></i> Publicado el {{comunicado.fecha}} </a>
+                </li>
+                <li>
+                    <a><i class="fa fa-user"></i> Administrador </a>
+                </li>
+              </ul>
+            </div>
+            <div class="article-content">
+                <p [innerHTML]="comunicado.descripcion | safeHtml"></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+          <div class="widget-sidebar">
+            <h5 class="sidebar-title">Recientes</h5>
+            <div class="sidebar-content">
+              <ul *ngIf="dataComunicados" class="list-sidebar">
+                <li *ngFor="let item of dataComunicados">
+                  <a (click)="getComunicado(item.id)">{{item.nombre}}</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="widget-sidebar widget-tags">
+            <h5 class="sidebar-title">Etiquetas</h5>
+            <div class="sidebar-content">
+              <ul>
+                <li>
+                  <a href="#">Web.</a>
+                </li>
+                <li>
+                  <a href="#">Noticia.</a>
+                </li>
+                <li>
+                  <a href="#">Informativo.</a>
+                </li>
+                <li>
+                  <a href="#">Reuniones</a>
+                </li>
+                <li>
+                  <a href="#">Logros</a>
+                </li>
+                <li>
+                  <a href="#">ASFI</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Section Blog-Single End /-->

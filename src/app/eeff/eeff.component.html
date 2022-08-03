@@ -1,0 +1,63 @@
+
+<app-navbar></app-navbar>
+<!-- Hero Bell Template -->
+<section class="hero">
+  <div class="container text-center">
+
+    <div class="col-md-12">
+      <h1 class="rse-titulo">
+          Estados Financieros
+      </h1>
+
+      <a class="btn-rse btn-full" (click)="scroll(rse)" >Ver Estados Financieros</a>
+    </div>
+  </div>
+
+</section>
+
+<section #rse id="rse" class="rse-contenido">
+    <br> <br><br><br><br><br>
+  <div *ngIf="dataEstados" class="features-row section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="wow fadeInLeft">
+              <h2>Descripción</h2>
+              <h3>Los estados financieros, también denominados cuentas anuales, informes financieros o estados contables, son el reflejo de la contabilidad de una empresa y muestran la estructura económica de ésta. En los estados financieros se plasman las actividades económicas que se realizan en la empresa durante un determinado período.</h3>
+              <div class="wow fadeInRight">
+                
+                <p class="wow fadeInRight" data-wow-duration="0.5s" *ngFor="let estado of dataEstados.data">
+                  <a href="{{estado.archivo}}" target="_blank">
+                    <i class="fa fa-cloud-download wow fadeInRight" data-wow-duration="0.5s"></i>
+                    {{estado.titulo}}
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="dataIndices" class="features-row ">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="wow fadeInLeft">
+              <h2>Coeficiente de Adecuación Patrimonial</h2>
+              <div class="wow fadeInRight">
+                <table class="table">
+                  <tbody>
+                    <tr *ngFor="let indice of dataIndices.data">
+                      <th scope="row">{{indice.titulo}}</th>
+                      <td>{{indice.valor}} %</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>

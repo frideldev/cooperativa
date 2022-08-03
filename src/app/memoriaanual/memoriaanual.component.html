@@ -1,0 +1,47 @@
+
+<app-navbar></app-navbar>
+<!-- Hero Bell Template -->
+<section class="hero" style="background-image: url(/assets/img01/memorias/memoria01.jpg);">
+  <div class="container text-center">
+
+    <div class="col-md-12">
+      <h1 class="rse-titulo">
+          Memorias
+      </h1>
+      <p class="tagline">
+        Institucionales Anuales
+      </p>
+      <a class="btn-rse btn-full" (click)="scroll(rse)" >Ver Memorias</a>
+    </div>
+  </div>
+
+</section>
+
+<section #rse id="rse" class="rse-contenido">
+    <br> <br><br><br><br><br>
+  <div *ngIf="dataMemorias" class="features-row section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="wow fadeInLeft">
+              <h2>Descripción</h2>
+              <h3>Con el propósito de lograr el engrandecimiento de nuestra Cooperativa, realizamos nuestras actividades en forma coordinada con todas las áreas de nuestra Institución, brindando de esta manera un servicio con calidez y responsabilidad en favor del asociado; dando cumplimiento a la normativa vigente</h3>
+              <p>
+                 En tal sentido, presentamos las memorias anuales de los ultimos años. 
+              </p>
+              <div class="wow fadeInRight">
+                
+                <p class="wow fadeInRight" data-wow-duration="0.5s" *ngFor="let memoria of dataMemorias.data">
+                  <a href="{{memoria.archivo}}" target="_blank">
+                    <i class="fa fa-cloud-download wow fadeInRight" data-wow-duration="0.5s"></i>
+                    {{memoria.titulo}}
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
