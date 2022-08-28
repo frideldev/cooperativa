@@ -13,6 +13,8 @@
     text-align: center;
     box-sizing: border-box;
     display: inline-block;
+    
+    
 }
 #floater2{
   position: absolute;
@@ -28,9 +30,12 @@
     text-align: center;
     box-sizing: border-box;
     display: inline-block;
+   
 }
 
-
+.fondoverde{
+  background-color: #26B460;
+}
 
 /*======================================
 //--//-->   NAVBAR
@@ -288,7 +293,7 @@
   }
   .nav-icon-img{
     position: absolute;
-    margin-top: -45px;
+    margin-top: -55px;
     margin-left: -200px;
    /* background: #38C172;*/
     border-radius: 10px;
@@ -327,7 +332,7 @@
   /*box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2);*/
   display: block;
   transition: .5s cubic-bezier(0.645, 0.045, 0.355, 1);
-  margin-top: 1px;
+  margin-top: -10px;
 }
 .animation-brand .glow-wrap{
   overflow: hidden;
@@ -422,8 +427,8 @@
     }
     .nav-icon-img{
       position: absolute;
-      margin-top: -45px;
-     /* margin-left: -150px;*/
+      margin-top: -55px;
+     margin-left: -70px;
 
     }
   }

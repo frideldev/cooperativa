@@ -4,7 +4,7 @@
 <owl-carousel-o *ngIf="dataSlides" [options]="carouselOptions"  >
     <ng-container *ngFor="let image of dataSlides?.data">
       <ng-template carouselSlide>
-      <div class="carousel-item-a intro-item bg-image" [ngStyle]="{'background-image':'url('+image.image_ruta+')'}">
+      <div class="carousel-item-a intro-item bg-image" [ngStyle]="{'background-image':'url('+'http://madreymaestra.com/'+image.image_ruta+')'}">
       <div class="overlay-slide overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">

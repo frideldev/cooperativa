@@ -33,7 +33,7 @@ import { OrganizacionComponent } from './organizacion/organizacion.component';
 import { SafeHtmlPipe} from './pipes/safehtml.pipe';
 import { MemoriarseComponent } from './memoriarse/memoriarse.component';
 import { InformerseComponent } from './informerse/informerse.component';
-import { MemoriaanualComponent } from './memoriaanual/memoriaanual.component';
+// import { MemoriaanualComponent } from './memoriaanual/memoriaanual.component';
 import { EeffComponent } from './eeff/eeff.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 
@@ -81,7 +81,7 @@ const routes: Route[] =[
   {path: 'organizacion', component: OrganizacionComponent},
   {path: 'memoriarse', component: MemoriarseComponent},
   {path: 'informerse', component: InformerseComponent},
-  {path: 'memorias', component: MemoriaanualComponent},
+  // {path: 'memorias', component: MemoriaanualComponent},
   {path: 'eeff', component: EeffComponent},
   {path: 'noticias', component: NoticiasComponent},
   {path: 'noticia/:id', component: NoticiaViewComponent},
@@ -124,7 +124,7 @@ const routes: Route[] =[
     SafeHtmlPipe,
     MemoriarseComponent,
     InformerseComponent,
-    MemoriaanualComponent,
+    // MemoriaanualComponent,
     EeffComponent,
     NoticiasComponent,
     ContactoComponent,

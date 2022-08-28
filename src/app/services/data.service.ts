@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
   API_ENDPOINT = environment.apiUrl;
+
   //API_ENDPOINT = 'http://192.168.1.20/api';
   //API_ENDPOINT = 'http://192.168.1.105/mym_backend/public/api';
   //API_ENDPOINT = 'http://www.madreymaestra.test:810/api';
