@@ -3,8 +3,8 @@ import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-Memoriaanual',
-  templateUrl: './Memoriaanual.component.html',
-  styleUrls: ['./Memoriaanual.component.css']
+  templateUrl: './memoriaanual.component.html',
+  styleUrls: ['./memoriaanual.component.css']
 })
 export class MemoriaanualComponent implements OnInit {
 

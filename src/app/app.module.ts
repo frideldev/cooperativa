@@ -33,7 +33,6 @@ import { OrganizacionComponent } from './organizacion/organizacion.component';
 import { SafeHtmlPipe} from './pipes/safehtml.pipe';
 import { MemoriarseComponent } from './memoriarse/memoriarse.component';
 import { InformerseComponent } from './informerse/informerse.component';
-// import { MemoriaanualComponent } from './memoriaanual/memoriaanual.component';
 import { EeffComponent } from './eeff/eeff.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 
@@ -63,6 +62,7 @@ import { PrecreditoComponent } from './precredito/precredito.component';
 import { NgWizardModule, NgWizardConfig, THEME} from 'ng-wizard';
 import {TooltipModule } from 'ng2-tooltip-directive';
 import { FormularioReclamoComponent } from './formulario-reclamo/formulario-reclamo.component';
+import { MemoriaanualComponent } from './memoriaanual/memoriaanual.component';
 
 
 
@@ -81,7 +81,6 @@ const routes: Route[] =[
   {path: 'organizacion', component: OrganizacionComponent},
   {path: 'memoriarse', component: MemoriarseComponent},
   {path: 'informerse', component: InformerseComponent},
-  // {path: 'memorias', component: MemoriaanualComponent},
   {path: 'eeff', component: EeffComponent},
   {path: 'noticias', component: NoticiasComponent},
   {path: 'noticia/:id', component: NoticiaViewComponent},
@@ -124,12 +123,13 @@ const routes: Route[] =[
     SafeHtmlPipe,
     MemoriarseComponent,
     InformerseComponent,
-    // MemoriaanualComponent,
+    MemoriarseComponent,
     EeffComponent,
     NoticiasComponent,
     ContactoComponent,
     HomeMenuComponent,
     CooperativaMenuComponent,
+    MemoriaanualComponent,
     MenuComponent,
     LicitacionesComponent,
     EducacionfinancieraComponent,

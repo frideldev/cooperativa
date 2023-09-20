@@ -10,6 +10,7 @@ export class OrganizacionComponent implements OnInit {
 
   dataConsejos: Object; 
   dataComites: Object;
+  dataAsamblea: any[];
   @ViewChild("asamblea") asamblea: ElementRef;
   @ViewChild("consejos") consejos: ElementRef;
   @ViewChild("comites") comites: ElementRef;
@@ -42,6 +43,16 @@ export class OrganizacionComponent implements OnInit {
       alert('Ocurrió un error');
     });
   }
+  getAsamblea(){
+    this.dataService.getInfoAsamblea().subscribe(
+      (data:any[]) =>{
+      this.dataAsamblea=Object.values(data);
+    },
+    (error) =>{
+      console.log(error);
+      alert('Ocurrió un error');
+    });
+  }
   getComites(){
     this.dataService.getComites().subscribe(
       data =>{
@@ -55,9 +66,9 @@ export class OrganizacionComponent implements OnInit {
   ngOnInit() {
     this.getConsejos();
     this.getComites();
+    this.getAsamblea();
   }
   scroll(ir: string){
-    console.log("hola::"+ ir);
     switch(ir){
       case "asamblea":
           this.asamblea.nativeElement.scrollIntoView({behavior: 'smooth'});

@@ -109,4 +109,7 @@ export class DataService {
   getInfoEntrada(id:number){
     return this.httpClient.get(this.API_ENDPOINT + '/info/sec/'+id);
   }
+  getInfoAsamblea(){
+    return this.httpClient.get(this.API_ENDPOINT + '/asambleasocios/definicion/');
+  }
 }
