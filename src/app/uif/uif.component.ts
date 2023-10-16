@@ -4,7 +4,7 @@ import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-uif',
   templateUrl: './uif.component.html',
-  styleUrls: ['./uif.component.css']
+  styleUrls: ['./uif.component.css','../rse/rse.component.css']
 })
 export class UifComponent implements OnInit {
 
@@ -21,7 +21,7 @@ export class UifComponent implements OnInit {
     },
     (error) =>{
       console.log(error);
-      alert('Ocurrió un error');
+      alert('Ocurrió un error en uif');
     });
   }
   ngOnInit() {

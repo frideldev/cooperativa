@@ -95,7 +95,10 @@ export class DataService {
     return this.httpClient.get(this.API_ENDPOINT+'/educacionf/sec/'+id);
   }
   getUif(){
-    return this.httpClient.get(this.API_ENDPOINT+'/unidadif');
+    return this.httpClient.get(this.API_ENDPOINT+'/uif');
+  }
+  getUifEntrada(id:number){
+    return this.httpClient.get(this.API_ENDPOINT + '/unidadif/sec/'+id);
   }
   getRse(){
     return this.httpClient.get(this.API_ENDPOINT+'/rse');

@@ -49,6 +49,7 @@ import { SeccionViewComponent } from './educacionfinanciera/seccion-view/seccion
 import { AhorroComponent } from './calculadora-cuota/ahorro/ahorro.component';
 import { TrabajanosotrosComponent } from './trabajanosotros/trabajanosotros.component';
 import { UifComponent } from './uif/uif.component';
+import { UifViewComponent } from './uif/uif-view/uif-view.component';
 import { ServicioViewComponent } from './home-servicios/servicio-view/servicio-view.component';
 import { NoticiaViewComponent } from './noticias/noticia-view/noticia-view.component';
 import { RseComponent } from './rse/rse.component';
@@ -63,8 +64,6 @@ import { NgWizardModule, NgWizardConfig, THEME} from 'ng-wizard';
 import {TooltipModule } from 'ng2-tooltip-directive';
 import { FormularioReclamoComponent } from './formulario-reclamo/formulario-reclamo.component';
 import { MemoriaanualComponent } from './memoriaanual/memoriaanual.component';
-
-
 
 //import { NgxCaptchaModule } from 'ngx-captcha';
 const ngWizardConfig: NgWizardConfig = {
@@ -95,6 +94,7 @@ const routes: Route[] =[
   {path: 'calculadora/ahorro', component:AhorroComponent},
   {path: 'trabajanosotros', component:TrabajanosotrosComponent},
   {path: 'uif', component:UifComponent},
+  {path: 'uif/seccion/:id', component:UifViewComponent},
   {path: 'rse', component:RseComponent},
   {path: 'rse/seccion/:id', component:RseViewComponent},
   {path: 'institucional', component:InstitucionalComponent},
@@ -150,6 +150,7 @@ const routes: Route[] =[
     ComunicadoViewComponent,
     PrecreditoComponent,
     FormularioReclamoComponent,
+    UifViewComponent,
   ],
   imports: [
     BrowserModule,
