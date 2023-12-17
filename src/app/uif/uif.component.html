@@ -27,7 +27,7 @@
             <img src="./../../photos/2/educacion/work-4.jpg" alt="">
           </ng-template>
           <section class="skill-card__body">
-            <h2 class="skill-card__title">{{uif.secccion}}</h2><span class="skill-card__duration">{{uif.descripcion}}</span>
+            <h2 class="skill-card__title">{{uif.secccion}}</h2><span class="skill-card__duration" [innerHTML]="uif.descripcion | safeHtml"></span>
           </section>
         </a>
       </div>
